@@ -13,12 +13,13 @@ def main():
     subprocess.check_call(["git", "clone", "--config", "core.autocrlf=input", "https://chromium.googlesource.com/chromium/tools/depot_tools.git", "depot_tools"])
 
   # Clone Skia
-  match = re.match('(m\\d+)(?:-([0-9a-f]+)(?:-([1-9][0-9]*))?)?', args.version)
-  if not match:
-    raise Exception('Expected --version "m<ver>-<sha>", got "' + args.version + '"')
+  #match = re.match('(m\\d+)(?:-([0-9a-f]+)(?:-([1-9][0-9]*))?)?', args.version)
+  #if not match:
+  #  raise Exception('Expected --version "m<ver>-<sha>", got "' + args.version + '"')
 
-  commit = match.group(2)
-  iteration = match.group(3)
+  #commit = match.group(2)
+  #iteration = match.group(3)
+  commit = args.version
 
   if os.path.exists("skia"):
     print("> Fetching")
@@ -28,7 +29,7 @@ def main():
     subprocess.check_call(["git", "fetch", "origin"])
   else:
     print("> Cloning")
-    subprocess.check_call(["git", "clone", "--config", "core.autocrlf=input", "https://github.com/JetBrains/skia.git", "--quiet"])
+    subprocess.check_call(["git", "clone", "--config", "core.autocrlf=input", "https://github.com/google/skia.git", "--quiet"])
     os.chdir("skia")
     subprocess.check_call(["git", "fetch", "origin"])
 
