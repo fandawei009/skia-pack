@@ -85,7 +85,7 @@ def main():
     # echo "NODE_JS = '/opt/homebrew/bin/node'" >> ~/.emscripten
 
     # see skia/modules/canvaskit/compile.sh for reference:
-    //fdw del 
+    #fdw del 
      #'skia_enable_fontmgr_custom_directory=true',
         #'skia_enable_fontmgr_custom_embedded=true',
         #'skia_enable_fontmgr_custom_empty=false',
