@@ -25,6 +25,9 @@ def main():
     out_bin + '/*.lib',
     out_bin + '/icudtl.dat',
     'include/**/*',
+    'modules/androidkit/src/*.h',
+    'modules/audioplayer/src/*.h',
+    'modules/canvaskit/*.h',
     'modules/particles/include/*.h',
     'modules/skottie/include/*.h',
     'modules/skottie/src/*.h',
@@ -71,7 +74,7 @@ def main():
     "third_party/icu/*.h"
   ]
 
-  dist = 'Skia-' + version + '-' + target + '-' + build_type + '-' + machine + classifier + '.zip'
+  dist = 'Skia-' + target + '-' + build_type + '-' + machine + classifier + '.zip'
   print('> Writing', dist)
   
   with zipfile.ZipFile(os.path.join(os.pardir, dist), 'w', compression=zipfile.ZIP_DEFLATED) as zip:
