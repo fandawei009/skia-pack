@@ -20,13 +20,16 @@ def main():
   classifier = common.classifier()
   out_bin = 'out/' + build_type + '-' + target + '-' + machine
 
-  globs = [
-    '*',
-    '**/*'
-  ]
+  #globs = [
+  #  '*',
+  #  '**/*'
+  #]
+globs = [
+  third_party/zlib/**/*,
+  third_party/libpng/**/*
+]
 
-  dist = 'Skia-' + target + '-' + build_type + '-' + machine + classifier + '.zip'
-  #dist = 'Skia-' + 'source' + '.zip'
+  dist = 'Skia-source.zip'
   print('> Writing', dist)
   
   with zipfile.ZipFile(os.path.join(os.pardir, dist), 'w', compression=zipfile.ZIP_DEFLATED) as zip:
