@@ -32,10 +32,12 @@ def main():
     'skia_use_sfntly=false',
     'skia_use_system_freetype2=false',
     'skia_use_system_harfbuzz=false',
-    'skia_pdf_subset_harfbuzz=true',
+    'skia_pdf_subset_harfbuzz=false',
     'skia_use_system_icu=false',
     'skia_enable_skottie=true',
-    'skia_use_freetype=true'
+    'skia_use_freetype=true',
+    'skia_use_zlib=false',
+    'skia_enable_pdf=false'
   ]
 
   if 'macos' == target or isIos:
